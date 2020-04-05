@@ -14,10 +14,7 @@ import servicesReducer from "./store/reducers/services";
 import providersReducer from "./store/reducers/providers";
 import { watchProviders, watchServices } from "./store/sagas";
 
-const composeEnhancers =
-  process.env.NODE_ENV === "development"
-    ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
-    : null || compose;
+const composeEnhancers = (process.env.NODE_ENV === 'development' ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : null) || compose;
 
 const rootReducer = combineReducers({
   services: servicesReducer,
